@@ -101,6 +101,7 @@ public class MnistReader
      public static void printImage(SingleData a){
      int i = 0;
      int width = 28;
+     System.out.println("------------------------------");
      for(int blerg = 0;blerg<width;blerg++){
      for(int index = 0;index<width;index++){
         if(a.activation[i]>.8)
@@ -118,6 +119,9 @@ public class MnistReader
         if(a.output[q]>0)    
             solution = q;
     System.out.println("Mnist classifies this as a "+solution);
+    
+     System.out.println("------------------------------");
+     System.out.println();
     }
 
 
