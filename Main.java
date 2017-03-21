@@ -7,11 +7,11 @@ public class Main
      int[] sizes = new int[] {784,30,10}; 
      
      //our label and image MNIST data files
-     String[] fileNames = {"train-labels.idx1-ubyte","train-images.idx3-ubyte"}; 
+     String[] fileNames = {"data/t10k-labels.idx1-ubyte","data/t10k-images.idx3-ubyte"}; 
      
-     //uses mnistreader wrapper to load data. load the first 10,000 images
-     Data data = new Data(MnistReader.getData(fileNames,15000)); 
-     // Data data = new Data(MnistReader.getData(fileNames,0)); //loads all images
+     
+     //Data data = new Data(MnistReader.getData(fileNames,5000)); //load the first 5000 images
+      Data data = new Data(MnistReader.getData(fileNames,0)); //loads all images
      
     
      //create a new network with random weights and biases
@@ -34,7 +34,7 @@ public class Main
      SingleData test_image = data.test_data[0];
      MnistReader.printImage(test_image);
      int guess = Util.Max(network2.feedforward(test_image.activation));
-     System.out.print("Network thinks this is a "+guess);
+     System.out.println("Network thinks this is a "+guess);
      
         }catch(Exception e){System.out.println(e);};
     }
