@@ -1,12 +1,14 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+---------------------------
+Simple Neural Net
+By: Scott Grimes
+---------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+Implements a simple feedforward neural net in java using stochastic gradient descent
+and the quadratic cost function.
+
+This simple network demonstrates the power neural nets have in image recognition.
+In just a few minutes the network can be trained to recognize digits from the MNIST
+dataset with over 90% accuracy
+
+For more reading and information about neural nets, see
+https://en.wikipedia.org/wiki/Artificial_neural_network
