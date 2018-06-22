@@ -7,7 +7,7 @@ public class Main
      int[] sizes = new int[] {784,30,10}; 
      
      //our label and image MNIST data files
-     String[] fileNames = {"data/t10k-labels.idx1-ubyte","data/t10k-images.idx3-ubyte"}; 
+     String[] fileNames = {"../data/t10k-labels.idx1-ubyte","../data/t10k-images.idx3-ubyte"}; 
      
      
      //Data data = new Data(MnistReader.getData(fileNames,5000)); //load the first 5000 images
