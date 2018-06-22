@@ -48,7 +48,7 @@ class NeuralNet(object):
         print "Epoch {0}: complete".format(i)
     print "Training Complete"
   
-def backprop(self,a,aOut):
+def backprop(self,a,expectedOut):
   # backpropegation for our network
   # a in a single activation
   # aOut is the output of a
@@ -74,7 +74,7 @@ def backprop(self,a,aOut):
     inputs.append(activation)
   
   # compute error of last layer
-  delta = self.costDerivative(activations[-1], aOut) * sigmoidPrime(zs[-1])
+  delta = self.costDerivative(activations[-1], expectedOut) * sigmoidPrime(zs[-1])
   nablaB[-1] = delta
   nablaW[-1] = np.dot( delta, activations[-2].transpose() )
 
@@ -115,7 +115,22 @@ def updateMiniBatch(self, miniBatch, eta):
   self.weights = [w-diff*nw for w, nw in zip(self.weights, nablaW))]
   self.biases = [b-diff*nw for b, nb in zip(self.biases, nablaB)]
 
+  def costDerivative(self, aOut, expectedOut):
+    # computes the cost derivative for our function by
+    # subtracting the actual answer from our desired output element-wise
+    # returns a new vector
 
+    return (aOut-expectedOut)
 
+  def evaluate(self, testData):
+    # evaluates our network on an array of test_data
+    # returns the number of correct solutions obtained
+    testResults = [(np.argmax(self.feedforward( a ), expectedOut) ) for (a, expectedOut) in testData]
+    return sum( int(actualOut==expectedOut ) for (actualOut, expectedOut ) in testResults
 
+def sigmoud(z):
+    return 1.0/(1.0+np.exp(-z))
+
+def sigmoidPrime(z):
+    return sigmoid(z)*(1-sigmoid(z))
   
