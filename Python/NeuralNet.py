@@ -62,7 +62,7 @@ def backprop(self,a,expectedOut):
   activation = a
   inputs = [a]
 
-  # list of z vectors
+  # list of inner z vectors
   zs = []
 
   # feedforward our input through the neural net, storing each 
