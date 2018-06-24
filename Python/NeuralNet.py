@@ -112,7 +112,7 @@ def updateMiniBatch(self, miniBatch, eta):
   diff = eta/len(miniBatch)
 
   # store new weights and biases
-  self.weights = [w-diff*nw for w, nw in zip(self.weights, nablaW))]
+  self.weights = [w-diff*nw for w, nw in zip(self.weights, nablaW)]
   self.biases = [b-diff*nw for b, nb in zip(self.biases, nablaB)]
 
   def costDerivative(self, aOut, expectedOut):
@@ -126,11 +126,11 @@ def updateMiniBatch(self, miniBatch, eta):
     # evaluates our network on an array of test_data
     # returns the number of correct solutions obtained
     testResults = [(np.argmax(self.feedforward( a ), expectedOut) ) for (a, expectedOut) in testData]
-    return sum( int(actualOut==expectedOut ) for (actualOut, expectedOut ) in testResults
+    return sum( int(actualOut==expectedOut ) for (actualOut, expectedOut ) in testResults)
 
-def sigmoud(z):
-    return 1.0/(1.0+np.exp(-z))
+def sigmoid(z):
+      return 1.0/(1.0+np.exp(-z))
 
 def sigmoidPrime(z):
-    return sigmoid(z)*(1-sigmoid(z))
+      return sigmoid(z)*(1-sigmoid(z))
   
